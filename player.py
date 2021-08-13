@@ -172,10 +172,10 @@ class Player(object):
         #         card.value == c.DRAW_TWO and self.game.draw_counter:
         #     self.logger.debug("Player has to draw and can't counter")
         #     is_playable = False
-        elif last.value == c.DRAW_TWO and card.value == c.DRAW_TWO:
-            is_playable = True
-        elif last.value == c.DRAW_TWO and card.color == last.color:
-            is_playable = False
+        # If last card is a +2, allow playing only +2s
+        elif self.game.draw_counter >= 2 and last.value != c.DRAW_FOUR:
+            if card.value != c.DRAW_TWO:
+                is_playable = False
         elif last.special == c.DRAW_FOUR and self.game.draw_counter:
             self.logger.debug("Player has to draw and can't counter")
             is_playable = False
