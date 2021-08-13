@@ -168,9 +168,13 @@ class Player(object):
                 not card.special):
             self.logger.debug("Card's color or value doesn't match")
             is_playable = False
-        elif last.value == c.DRAW_TWO and not \
-                card.value == c.DRAW_TWO and self.game.draw_counter:
-            self.logger.debug("Player has to draw and can't counter")
+        # elif last.value == c.DRAW_TWO and not \
+        #         card.value == c.DRAW_TWO and self.game.draw_counter:
+        #     self.logger.debug("Player has to draw and can't counter")
+        #     is_playable = False
+        elif last.value == c.DRAW_TWO and card.value == c.DRAW_TWO:
+            is_playable = True
+        elif last.value == c.DRAW_TWO and card.color == last.color:
             is_playable = False
         elif last.special == c.DRAW_FOUR and self.game.draw_counter:
             self.logger.debug("Player has to draw and can't counter")
