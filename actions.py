@@ -141,10 +141,11 @@ def do_draw(bot, player):
                    text=__("There are no more cards in the deck.",
                            multi=game.translate))
 
-    if (game.last_card.value == c.DRAW_TWO or
-        game.last_card.special == c.DRAW_FOUR) and \
-            draw_counter_before > 0:
-        game.turn()
+    # # Don't allow to play a card after drawing from a special
+    # if (game.last_card.value == c.DRAW_TWO or
+    #     game.last_card.special == c.DRAW_FOUR) and \
+    #         draw_counter_before > 0:
+    #     game.turn()
 
 
 def do_call_bluff(bot, player):
