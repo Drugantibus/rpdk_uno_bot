@@ -25,3 +25,15 @@ Current gamemodes available: classic, fast and wild. Check the details with the 
 Then run the bot with `python3 bot.py`.
 
 Code documentation is minimal but there.
+
+Fork of the [original @unobot](https://github.com/jh0ker/mau_mau_bot) to implement house rules.
+Current changes:
+
+* Allows stacking of +2s, but not +4s
+* Allows playing a card after drawing any amount of cards
+  * Changed default behaviour that only let you play the last drawn card, if legal
+* Allows playing a card after calling a bluff, regardless of result
+
+## TODO
+
+- [ ] Implement choice of custom rules via either a conf file or the bot
