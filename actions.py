@@ -111,7 +111,7 @@ def do_play_card(bot, player, result_id):
         if us.stats:
             us.games_played += 1
 
-            if game.players_won is 0:
+            if game.players_won == 0:
                 us.first_places += 1
 
         game.players_won += 1
@@ -180,7 +180,7 @@ def do_call_bluff(bot, player):
                        text=__("There are no more cards in the deck.",
                                multi=game.translate))
 
-    game.turn()
+    # game.turn()
 
 
 def start_player_countdown(bot, game, job_queue):
