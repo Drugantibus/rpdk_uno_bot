@@ -139,8 +139,8 @@ class Player(object):
         self.logger.debug("Last card was " + str(last))
 
         cards = self.cards
-        if self.drew:
-            cards = self.cards[-1:]
+        # if self.drew:
+        #     cards = self.cards[-1:]
 
         # You may only play a +4 if you have no cards of the correct color
         self.bluffing = False
